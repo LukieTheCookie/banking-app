@@ -15,6 +15,6 @@ export class AccountService {
   }
 
   createAccount(data: any){
-    return this.http.post<Account>(this.baseUrl, data);
+    return this.http.post<Account>('/api/user', data);
   }
 }

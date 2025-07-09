@@ -4,6 +4,18 @@ import com.example.bankingapp.dto.UserDto;
 import com.example.bankingapp.entity.User;
 
 public class UserMapper {
+
+     // For creating new users (no accounts)
+    public static User mapToUserForCreate(UserDto userDto) {
+        return new User(
+                userDto.getId(),
+                userDto.getUsername(),
+                userDto.getEmail(),
+                userDto.getPassword(),
+                null
+        );
+    }
+
     public static User mapToUser(UserDto userDto){
         return new User(
                 userDto.getId(),

@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto createUser(UserDto userDto) {
-        User user = UserMapper.mapToUser(userDto);
+        User user = UserMapper.mapToUserForCreate(userDto);
         User savedUser = userRepository.save(user);
         return UserMapper.mapToUserDto(savedUser);
     }
